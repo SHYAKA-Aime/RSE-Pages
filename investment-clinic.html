@@ -298,6 +298,78 @@
       z-index: 3;
     }
 
+    /* Floating badges positioned gracefully to the sides */
+    .ic-hero-floating-tag {
+      position: absolute;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      color: #0f172a;
+      padding: 11px 20px;
+      border-radius: 50px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      pointer-events: auto;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ic-hero-floating-tag:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 22px 46px rgba(15, 23, 42, 0.28);
+    }
+    .ic-tag-left {
+      bottom: 22%;
+      left: calc(50% - 630px);
+      animation: floatSmoothLeft 6s ease-in-out infinite;
+    }
+    .ic-tag-right {
+      bottom: 26%;
+      right: calc(50% - 630px);
+      animation: floatSmoothRight 7s ease-in-out infinite 1s;
+    }
+    .ic-tag-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+    }
+
+    @keyframes floatSmoothLeft {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes floatSmoothRight {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    @media (max-width: 1400px) {
+      .ic-tag-left {
+        left: 3%;
+        bottom: 18%;
+      }
+      .ic-tag-right {
+        right: 3%;
+        bottom: 22%;
+      }
+    }
+
     .ic-hero-devices-img {
       max-width: 96%;
       width: 1280px;
@@ -598,8 +670,30 @@
       </h1>
     </div>
 
-    <!-- Device mockup resting flush at the bottom -->
+    <!-- Device mockup resting flush at the bottom with side animated tags -->
     <div class="ic-hero-devices-wrap">
+      <!-- Floating Badge Left: Listing Readiness -->
+      <div class="ic-hero-floating-tag ic-tag-left d-none d-lg-inline-flex">
+        <span class="ic-tag-icon" style="background: #e0f2fe; color: #0284c7;">
+          <i class="bi bi-graph-up-arrow"></i>
+        </span>
+        <div class="text-start">
+          <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">Listing Readiness</div>
+          <div style="color: #0f172a; font-weight: 800; font-size: 0.96rem; line-height: 1.3;">98.4% Prepared</div>
+        </div>
+      </div>
+
+      <!-- Floating Badge Right: Investor Network -->
+      <div class="ic-hero-floating-tag ic-tag-right d-none d-lg-inline-flex">
+        <span class="ic-tag-icon" style="background: #dcfce7; color: #16a34a;">
+          <i class="bi bi-shield-check"></i>
+        </span>
+        <div class="text-start">
+          <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">Investor Network</div>
+          <div style="color: #0f172a; font-weight: 800; font-size: 0.96rem; line-height: 1.3;">Verified Matchmaking</div>
+        </div>
+      </div>
+
       <img src="images/investment-clinic-hero-bg.png" 
            alt="Investment Clinic Platform Mockup" 
            class="ic-hero-devices-img img-fluid">
