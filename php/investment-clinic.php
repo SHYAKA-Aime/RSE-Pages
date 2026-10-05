@@ -57,38 +57,52 @@
         animation: heroGlowPulse 10s ease-in-out infinite alternate-reverse;
         z-index: 1;
     }
-    /* Lively ambient bubbles traveling across hero section */
+    /* Ambient floating bubbles - dispersed organically with low subtle opacity */
     .ic-hero-bubble {
         position: absolute;
         border-radius: 50%;
-        background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25) 60%, rgba(255, 255, 255, 0.08) 100%);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.35), inset 0 0 8px rgba(255, 255, 255, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        backdrop-filter: blur(2px);
+        background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.12) 65%, rgba(255, 255, 255, 0.02) 100%);
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.15), inset 0 0 6px rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.28);
         pointer-events: none;
         z-index: 2;
+        opacity: 0.35;
     }
-    .ic-b-1 { width: 22px; height: 22px; top: 15%; animation: bubbleMoveRight 14s linear infinite; }
-    .ic-b-2 { width: 32px; height: 32px; top: 35%; animation: bubbleMoveLeft 18s linear infinite 3s; }
-    .ic-b-3 { width: 14px; height: 14px; top: 55%; animation: bubbleMoveRight 16s linear infinite 5s; }
-    .ic-b-4 { width: 26px; height: 26px; top: 22%; animation: bubbleMoveLeft 15s linear infinite 8s; }
-    .ic-b-5 { width: 18px; height: 18px; top: 42%; animation: bubbleMoveRight 19s linear infinite 2s; }
-    .ic-b-6 { width: 12px; height: 12px; top: 65%; animation: bubbleMoveLeft 13s linear infinite 6s; }
-    .ic-b-7 { width: 28px; height: 28px; top: 28%; animation: bubbleMoveRight 17s linear infinite 10s; }
+    .ic-b-1 { width: 18px; height: 18px; top: 14%; left: 12%; animation: driftRandom1 18s ease-in-out infinite -4s; opacity: 0.32; }
+    .ic-b-2 { width: 28px; height: 28px; top: 26%; left: 78%; animation: driftRandom2 22s ease-in-out infinite -9s; opacity: 0.25; }
+    .ic-b-3 { width: 12px; height: 12px; top: 48%; left: 6%; animation: driftRandom3 16s ease-in-out infinite -2s; opacity: 0.28; }
+    .ic-b-4 { width: 22px; height: 22px; top: 18%; left: 45%; animation: driftRandom2 20s ease-in-out infinite -12s; opacity: 0.22; }
+    .ic-b-5 { width: 16px; height: 16px; top: 62%; left: 88%; animation: driftRandom1 19s ease-in-out infinite -7s; opacity: 0.3; }
+    .ic-b-6 { width: 10px; height: 10px; top: 36%; left: 28%; animation: driftRandom4 15s ease-in-out infinite -5s; opacity: 0.26; }
+    .ic-b-7 { width: 24px; height: 24px; top: 52%; left: 62%; animation: driftRandom3 24s ease-in-out infinite -14s; opacity: 0.2; }
+    .ic-b-8 { width: 14px; height: 14px; top: 10%; left: 86%; animation: driftRandom4 17s ease-in-out infinite -8s; opacity: 0.28; }
+    .ic-b-9 { width: 20px; height: 20px; top: 70%; left: 18%; animation: driftRandom2 21s ease-in-out infinite -15s; opacity: 0.25; }
 
-    @keyframes bubbleMoveRight {
-        0% { left: -50px; transform: translateY(0px) scale(0.85); opacity: 0; }
-        10% { opacity: 0.85; }
-        50% { transform: translateY(-24px) scale(1.1); opacity: 0.95; }
-        90% { opacity: 0.85; }
-        100% { left: calc(100% + 50px); transform: translateY(12px) scale(0.9); opacity: 0; }
+    @keyframes driftRandom1 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        25% { transform: translate(35px, -28px) scale(1.08); }
+        50% { transform: translate(70px, 12px) scale(0.95); }
+        75% { transform: translate(25px, 32px) scale(1.05); }
+        100% { transform: translate(0px, 0px) scale(1); }
     }
-    @keyframes bubbleMoveLeft {
-        0% { right: -50px; transform: translateY(0px) scale(0.9); opacity: 0; }
-        10% { opacity: 0.85; }
-        50% { transform: translateY(22px) scale(1.15); opacity: 0.95; }
-        90% { opacity: 0.85; }
-        100% { right: calc(100% + 50px); transform: translateY(-16px) scale(0.85); opacity: 0; }
+    @keyframes driftRandom2 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        25% { transform: translate(-40px, 30px) scale(0.96); }
+        50% { transform: translate(-75px, -15px) scale(1.1); }
+        75% { transform: translate(-30px, -35px) scale(1.02); }
+        100% { transform: translate(0px, 0px) scale(1); }
+    }
+    @keyframes driftRandom3 {
+        0% { transform: translate(0px, 0px) scale(0.98); }
+        33% { transform: translate(45px, 35px) scale(1.12); }
+        66% { transform: translate(-35px, -25px) scale(0.92); }
+        100% { transform: translate(0px, 0px) scale(0.98); }
+    }
+    @keyframes driftRandom4 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        30% { transform: translate(-30px, -40px) scale(1.08); }
+        70% { transform: translate(35px, 20px) scale(0.94); }
+        100% { transform: translate(0px, 0px) scale(1); }
     }
     .ic-hero-devices-img {
         max-width: 96%;
@@ -114,7 +128,7 @@
     <!-- Ambient glowing light orbs -->
     <div class="ic-hero-glow-1"></div>
     <div class="ic-hero-glow-2"></div>
-    <!-- Dynamic white bubbles traversing the hero section with lively motion -->
+    <!-- Dynamic white bubbles dispersed across the hero section with organic random drift -->
     <div class="ic-hero-bubble ic-b-1"></div>
     <div class="ic-hero-bubble ic-b-2"></div>
     <div class="ic-hero-bubble ic-b-3"></div>
@@ -122,6 +136,8 @@
     <div class="ic-hero-bubble ic-b-5"></div>
     <div class="ic-hero-bubble ic-b-6"></div>
     <div class="ic-hero-bubble ic-b-7"></div>
+    <div class="ic-hero-bubble ic-b-8"></div>
+    <div class="ic-hero-bubble ic-b-9"></div>
 
     <div class="position-relative pt-2" style="z-index: 4;">
         <p class="text-center page-indicator mb-3">
