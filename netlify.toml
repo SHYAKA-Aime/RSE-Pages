@@ -1,0 +1,25 @@
+# Netlify configuration
+
+[build]
+  publish = "."
+
+# Friendly clean endpoints
+[[redirects]]
+  from = "/"
+  to = "/green-windows-exchange.html"
+  status = 200
+
+[[redirects]]
+  from = "/green-exchange-window"
+  to = "/green-windows-exchange.html"
+  status = 200
+
+[[redirects]]
+  from = "/green-windows-exchange"
+  to = "/green-windows-exchange.html"
+  status = 200
+
+[[redirects]]
+  from = "/investment-clinic"
+  to = "/investment-clinic.html"
+  status = 200
