@@ -111,19 +111,107 @@
       z-index: 1;
     }
 
-    /* Floating particles */
-    .ic-floating-particle {
+    /* Lively ambient bubbles traveling across hero section */
+    .ic-hero-bubble {
       position: absolute;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(3px);
+      background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25) 60%, rgba(255, 255, 255, 0.08) 100%);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.35), inset 0 0 8px rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(2px);
       pointer-events: none;
       z-index: 2;
     }
-    .ic-p-1 { width: 14px; height: 14px; top: 18%; left: 8%; animation: floatParticle 10s ease-in-out infinite; }
-    .ic-p-2 { width: 22px; height: 22px; top: 32%; left: 88%; animation: floatParticle 13s ease-in-out infinite 1.5s; }
-    .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 11s ease-in-out infinite 2.5s; }
-    .ic-p-4 { width: 18px; height: 18px; top: 22%; right: 20%; animation: floatParticle 14s ease-in-out infinite 2s; }
+
+    /* Staggered positions, sizes and moderate traversal speeds */
+    .ic-b-1 {
+      width: 22px;
+      height: 22px;
+      top: 15%;
+      animation: bubbleMoveRight 14s linear infinite;
+    }
+    .ic-b-2 {
+      width: 32px;
+      height: 32px;
+      top: 35%;
+      animation: bubbleMoveLeft 18s linear infinite 3s;
+    }
+    .ic-b-3 {
+      width: 14px;
+      height: 14px;
+      top: 55%;
+      animation: bubbleMoveRight 16s linear infinite 5s;
+    }
+    .ic-b-4 {
+      width: 26px;
+      height: 26px;
+      top: 22%;
+      animation: bubbleMoveLeft 15s linear infinite 8s;
+    }
+    .ic-b-5 {
+      width: 18px;
+      height: 18px;
+      top: 42%;
+      animation: bubbleMoveRight 19s linear infinite 2s;
+    }
+    .ic-b-6 {
+      width: 12px;
+      height: 12px;
+      top: 65%;
+      animation: bubbleMoveLeft 13s linear infinite 6s;
+    }
+    .ic-b-7 {
+      width: 28px;
+      height: 28px;
+      top: 28%;
+      animation: bubbleMoveRight 17s linear infinite 10s;
+    }
+
+    @keyframes bubbleMoveRight {
+      0% {
+        left: -50px;
+        transform: translateY(0px) scale(0.85);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.85;
+      }
+      50% {
+        transform: translateY(-24px) scale(1.1);
+        opacity: 0.95;
+      }
+      90% {
+        opacity: 0.85;
+      }
+      100% {
+        left: calc(100% + 50px);
+        transform: translateY(12px) scale(0.9);
+        opacity: 0;
+      }
+    }
+
+    @keyframes bubbleMoveLeft {
+      0% {
+        right: -50px;
+        transform: translateY(0px) scale(0.9);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.85;
+      }
+      50% {
+        transform: translateY(22px) scale(1.15);
+        opacity: 0.95;
+      }
+      90% {
+        opacity: 0.85;
+      }
+      100% {
+        right: calc(100% + 50px);
+        transform: translateY(-16px) scale(0.85);
+        opacity: 0;
+      }
+    }
 
     .ic-hero-badge {
       display: inline-block;
@@ -194,17 +282,6 @@
       100% {
         transform: scale(1.15) translate(20px, 15px);
         opacity: 0.8;
-      }
-    }
-
-    @keyframes floatParticle {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.3;
-      }
-      50% {
-        transform: translateY(-16px) scale(1.12);
-        opacity: 0.65;
       }
     }
 
@@ -450,11 +527,14 @@
     <div class="ic-hero-glow-1"></div>
     <div class="ic-hero-glow-2"></div>
 
-    <!-- Drifting floating particles -->
-    <div class="ic-floating-particle ic-p-1"></div>
-    <div class="ic-floating-particle ic-p-2"></div>
-    <div class="ic-floating-particle ic-p-3"></div>
-    <div class="ic-floating-particle ic-p-4"></div>
+    <!-- Dynamic white bubbles traversing the hero section with lively motion -->
+    <div class="ic-hero-bubble ic-b-1"></div>
+    <div class="ic-hero-bubble ic-b-2"></div>
+    <div class="ic-hero-bubble ic-b-3"></div>
+    <div class="ic-hero-bubble ic-b-4"></div>
+    <div class="ic-hero-bubble ic-b-5"></div>
+    <div class="ic-hero-bubble ic-b-6"></div>
+    <div class="ic-hero-bubble ic-b-7"></div>
 
     <div class="container position-relative pt-4" style="z-index: 4;">
       <p class="text-center page-indicator mb-3">
