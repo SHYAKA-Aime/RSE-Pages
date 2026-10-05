@@ -125,49 +125,6 @@
     .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 7s ease-in-out infinite 2s; }
     .ic-p-4 { width: 18px; height: 18px; top: 22%; right: 20%; animation: floatParticle 9s ease-in-out infinite 1.5s; }
 
-    /* Interactive floating stats pills near devices */
-    .ic-hero-floating-tag {
-      position: absolute;
-      z-index: 5;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      color: #0f172a;
-      padding: 10px 18px;
-      border-radius: 50px;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.86rem;
-      font-weight: 700;
-      pointer-events: auto;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .ic-hero-floating-tag:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
-    }
-    .ic-tag-left {
-      bottom: 22%;
-      left: 6%;
-      animation: floatSmooth 5.5s ease-in-out infinite;
-    }
-    .ic-tag-right {
-      bottom: 28%;
-      right: 6%;
-      animation: floatSmooth 6.5s ease-in-out infinite 1.2s;
-    }
-    .ic-tag-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-    }
-
     .ic-hero-badge {
       display: inline-block;
       padding: 7px 20px;
@@ -509,30 +466,8 @@
       </h1>
     </div>
 
-    <!-- Device mockup with interactive floating metric tags resting flush at the bottom -->
+    <!-- Device mockup resting flush at the bottom -->
     <div class="ic-hero-devices-wrap">
-      <!-- Floating Tag Left: Capital Readiness -->
-      <div class="ic-hero-floating-tag ic-tag-left d-none d-md-inline-flex">
-        <span class="ic-tag-icon" style="background: #e0f2fe; color: #0284c7;">
-          <i class="bi bi-graph-up-arrow"></i>
-        </span>
-        <div class="text-start">
-          <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Listing Readiness</div>
-          <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">98.4% Prepared</div>
-        </div>
-      </div>
-
-      <!-- Floating Tag Right: Active Pipeline -->
-      <div class="ic-hero-floating-tag ic-tag-right d-none d-md-inline-flex">
-        <span class="ic-tag-icon" style="background: #dcfce7; color: #16a34a;">
-          <i class="bi bi-shield-check"></i>
-        </span>
-        <div class="text-start">
-          <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Investor Network</div>
-          <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">Verified Matchmaking</div>
-        </div>
-      </div>
-
       <img src="images/investment-clinic-hero-bg.png" 
            alt="Investment Clinic Platform Mockup" 
            class="ic-hero-devices-img img-fluid">

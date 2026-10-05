@@ -68,25 +68,6 @@
     .ic-p-1 { width: 14px; height: 14px; top: 18%; left: 8%; animation: floatParticle 6s ease-in-out infinite; }
     .ic-p-2 { width: 22px; height: 22px; top: 32%; left: 88%; animation: floatParticle 8s ease-in-out infinite 1s; }
     .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 7s ease-in-out infinite 2s; }
-    .ic-hero-floating-tag {
-        position: absolute;
-        z-index: 5;
-        background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(12px);
-        color: #0f172a;
-        padding: 10px 18px;
-        border-radius: 50px;
-        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.95);
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 0.86rem;
-        font-weight: 700;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .ic-tag-left { bottom: 22%; left: 6%; animation: floatSmooth 5.5s ease-in-out infinite; }
-    .ic-tag-right { bottom: 28%; right: 6%; animation: floatSmooth 6.5s ease-in-out infinite 1.2s; }
     .ic-hero-devices-img {
         max-width: 96%;
         width: 1280px;
@@ -107,10 +88,6 @@
     @keyframes floatParticle {
         0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
         50% { transform: translateY(-20px) scale(1.15); opacity: 0.7; }
-    }
-    @keyframes floatSmooth {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
     }
 </style>
 
@@ -137,28 +114,6 @@
     </div>
 
     <div class="text-center mt-auto w-100 position-relative" style="line-height: 0; z-index: 3;">
-        <!-- Floating Tag Left: Capital Readiness -->
-        <div class="ic-hero-floating-tag ic-tag-left d-none d-md-inline-flex">
-            <span style="width: 32px; height: 32px; border-radius: 50%; background: #e0f2fe; color: #0284c7; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">
-                <i class="bi bi-graph-up-arrow"></i>
-            </span>
-            <div class="text-start">
-                <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Listing Readiness</div>
-                <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">98.4% Prepared</div>
-            </div>
-        </div>
-
-        <!-- Floating Tag Right: Active Pipeline -->
-        <div class="ic-hero-floating-tag ic-tag-right d-none d-md-inline-flex">
-            <span style="width: 32px; height: 32px; border-radius: 50%; background: #dcfce7; color: #16a34a; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">
-                <i class="bi bi-shield-check"></i>
-            </span>
-            <div class="text-start">
-                <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Investor Network</div>
-                <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">Verified Matchmaking</div>
-            </div>
-        </div>
-
         <?php 
         $clinic_banner = !empty(web_config()['investment_clinic_banner']) ? base_url(web_config()['investment_clinic_banner']) : base_url('images/investment-clinic-hero-bg.png');
         ?>
