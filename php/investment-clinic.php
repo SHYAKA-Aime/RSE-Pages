@@ -8,14 +8,14 @@
             </a>
             <div class="d-none d-lg-flex align-items-center gap-1">
                 <a href="<?= base_url() ?>" class="rse-nav-link text-success fw-bold text-decoration-none px-2 py-1">Home</a>
-                <a href="#real-time-data" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">GEW Sustainable Securities</a>
-                <a href="#downloads" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">GEW Publications</a>
-                <a href="#gew-datahub" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">GEW DataHub</a>
-                <a href="#esg-gps" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">ESG GPS</a>
+                <a href="#listed-profiles" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Listed Profiles</a>
+                <a href="#next-gen-q" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Next Gen Q</a>
+                <a href="#login" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Login</a>
+                <a href="#start-application" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Start Application</a>
             </div>
             <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-search text-secondary" style="font-size: 1.05rem; cursor: pointer;"></i>
-                <a href="#contact" class="btn btn-sm btn-success rounded-pill px-4 fw-semibold shadow-sm" style="background-color: #00a84f; border-color: #00a84f;">Start investing</a>
+                <a href="#start-application" class="btn btn-sm btn-success rounded-pill px-4 fw-semibold shadow-sm" style="background-color: #00a84f; border-color: #00a84f;">Start Application</a>
             </div>
         <?php endif; ?>
     </div>
