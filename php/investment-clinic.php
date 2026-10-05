@@ -65,29 +65,30 @@
         pointer-events: none;
         z-index: 2;
     }
-    .ic-p-1 { width: 14px; height: 14px; top: 18%; left: 8%; animation: floatParticle 6s ease-in-out infinite; }
-    .ic-p-2 { width: 22px; height: 22px; top: 32%; left: 88%; animation: floatParticle 8s ease-in-out infinite 1s; }
-    .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 7s ease-in-out infinite 2s; }
+    .ic-p-1 { width: 14px; height: 14px; top: 18%; left: 8%; animation: floatParticle 10s ease-in-out infinite; }
+    .ic-p-2 { width: 22px; height: 22px; top: 32%; left: 88%; animation: floatParticle 13s ease-in-out infinite 1.5s; }
+    .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 11s ease-in-out infinite 2.5s; }
     .ic-hero-devices-img {
         max-width: 96%;
         width: 1280px;
         margin: 0 auto;
         vertical-align: bottom;
         filter: drop-shadow(0 -10px 40px rgba(0, 30, 80, 0.22));
-        animation: heroDeviceFloat 6s ease-in-out infinite alternate;
+        animation: heroDeviceFloat 9.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
         transform-origin: bottom center;
+        transition: filter 0.8s ease, transform 0.8s ease;
     }
     @keyframes heroDeviceFloat {
         0% { transform: translateY(0px) scale(1); }
-        100% { transform: translateY(-9px) scale(1.01); }
+        100% { transform: translateY(-8px) scale(1.008); }
     }
     @keyframes heroGlowPulse {
-        0% { transform: scale(0.9) translate(0, 0); opacity: 0.55; }
-        100% { transform: scale(1.2) translate(25px, 20px); opacity: 0.85; }
+        0% { transform: scale(0.92) translate(0, 0); opacity: 0.5; }
+        100% { transform: scale(1.15) translate(20px, 15px); opacity: 0.8; }
     }
     @keyframes floatParticle {
         0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-        50% { transform: translateY(-20px) scale(1.15); opacity: 0.7; }
+        50% { transform: translateY(-16px) scale(1.12); opacity: 0.65; }
     }
 </style>
 
