@@ -69,10 +69,10 @@
       color: var(--ic-accent-blue);
     }
 
-    /* Hero Section - Full Viewport with Image at Bottom */
+    /* Hero Section - Full Viewport with Image at Bottom & Dynamic Ambient Animations */
     .ic-hero-section {
       position: relative;
-      background: linear-gradient(180deg, #4da4f7 0%, #308de6 55%, #1d76cf 100%);
+      background: linear-gradient(180deg, #3b8fe8 0%, #257ad6 50%, #155ea7 100%);
       color: #ffffff;
       min-height: calc(100vh - 69px);
       display: flex;
@@ -82,33 +82,124 @@
       overflow: hidden;
     }
 
+    /* Ambient animated light orbs in hero background */
+    .ic-hero-glow-1 {
+      position: absolute;
+      top: -10%;
+      left: 15%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(147, 197, 253, 0.45) 0%, rgba(59, 130, 246, 0) 70%);
+      pointer-events: none;
+      filter: blur(40px);
+      animation: heroGlowPulse 8s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+
+    .ic-hero-glow-2 {
+      position: absolute;
+      top: 25%;
+      right: 10%;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(37, 99, 235, 0) 70%);
+      pointer-events: none;
+      filter: blur(50px);
+      animation: heroGlowPulse 10s ease-in-out infinite alternate-reverse;
+      z-index: 1;
+    }
+
+    /* Floating particles */
+    .ic-floating-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(3px);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .ic-p-1 { width: 14px; height: 14px; top: 18%; left: 8%; animation: floatParticle 6s ease-in-out infinite; }
+    .ic-p-2 { width: 22px; height: 22px; top: 32%; left: 88%; animation: floatParticle 8s ease-in-out infinite 1s; }
+    .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 7s ease-in-out infinite 2s; }
+    .ic-p-4 { width: 18px; height: 18px; top: 22%; right: 20%; animation: floatParticle 9s ease-in-out infinite 1.5s; }
+
+    /* Interactive floating stats pills near devices */
+    .ic-hero-floating-tag {
+      position: absolute;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      color: #0f172a;
+      padding: 10px 18px;
+      border-radius: 50px;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      pointer-events: auto;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ic-hero-floating-tag:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+    }
+    .ic-tag-left {
+      bottom: 22%;
+      left: 6%;
+      animation: floatSmooth 5.5s ease-in-out infinite;
+    }
+    .ic-tag-right {
+      bottom: 28%;
+      right: 6%;
+      animation: floatSmooth 6.5s ease-in-out infinite 1.2s;
+    }
+    .ic-tag-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
     .ic-hero-badge {
       display: inline-block;
-      padding: 6px 18px;
+      padding: 7px 20px;
       border-radius: 50px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.45);
       color: #ffffff;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      animation: heroBadgePulse 3s ease-in-out infinite alternate;
     }
 
     .ic-hero-title {
-      font-size: clamp(2rem, 3.4vw, 3.2rem);
+      font-size: clamp(2.1rem, 3.6vw, 3.3rem);
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.03em;
       color: #ffffff;
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto;
+      text-shadow: 0 2px 14px rgba(0, 40, 100, 0.18);
     }
 
     .ic-hero-devices-wrap {
       width: 100%;
       margin-top: auto;
       line-height: 0;
+      position: relative;
+      z-index: 3;
     }
 
     .ic-hero-devices-img {
@@ -118,7 +209,64 @@
       display: block;
       margin: 0 auto;
       vertical-align: bottom;
-      filter: drop-shadow(0 -5px 30px rgba(0, 0, 0, 0.15));
+      filter: drop-shadow(0 -10px 40px rgba(0, 30, 80, 0.22));
+      animation: heroDeviceFloat 6s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+      transition: filter 0.3s ease;
+    }
+
+    .ic-hero-devices-img:hover {
+      filter: drop-shadow(0 -15px 50px rgba(0, 50, 140, 0.32));
+    }
+
+    /* Keyframe Animations */
+    @keyframes heroDeviceFloat {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      100% {
+        transform: translateY(-9px) scale(1.01);
+      }
+    }
+
+    @keyframes heroGlowPulse {
+      0% {
+        transform: scale(0.9) translate(0, 0);
+        opacity: 0.55;
+      }
+      100% {
+        transform: scale(1.2) translate(25px, 20px);
+        opacity: 0.85;
+      }
+    }
+
+    @keyframes floatParticle {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+      }
+      50% {
+        transform: translateY(-20px) scale(1.15);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes floatSmooth {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes heroBadgePulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35);
+      }
+      100% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
     }
 
     /* Welcome Bar */
@@ -339,9 +487,19 @@
     </div>
   </header>
 
-  <!-- HERO SECTION WITH DEVICES GRAPHIC -->
+  <!-- HERO SECTION WITH DEVICES GRAPHIC & DYNAMIC AMBIENT MOTION -->
   <div class="container-fluid ic-hero-section text-center p-0">
-    <div class="container position-relative pt-4">
+    <!-- Ambient glowing energy orbs -->
+    <div class="ic-hero-glow-1"></div>
+    <div class="ic-hero-glow-2"></div>
+
+    <!-- Drifting floating particles -->
+    <div class="ic-floating-particle ic-p-1"></div>
+    <div class="ic-floating-particle ic-p-2"></div>
+    <div class="ic-floating-particle ic-p-3"></div>
+    <div class="ic-floating-particle ic-p-4"></div>
+
+    <div class="container position-relative pt-4" style="z-index: 4;">
       <p class="text-center page-indicator mb-3">
         <button class="ic-hero-badge border-0">Investment Clinic</button>
       </p>
@@ -351,8 +509,30 @@
       </h1>
     </div>
 
-    <!-- Device mockup resting flush at the bottom of the viewport -->
+    <!-- Device mockup with interactive floating metric tags resting flush at the bottom -->
     <div class="ic-hero-devices-wrap">
+      <!-- Floating Tag Left: Capital Readiness -->
+      <div class="ic-hero-floating-tag ic-tag-left d-none d-md-inline-flex">
+        <span class="ic-tag-icon" style="background: #e0f2fe; color: #0284c7;">
+          <i class="bi bi-graph-up-arrow"></i>
+        </span>
+        <div class="text-start">
+          <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Listing Readiness</div>
+          <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">98.4% Prepared</div>
+        </div>
+      </div>
+
+      <!-- Floating Tag Right: Active Pipeline -->
+      <div class="ic-hero-floating-tag ic-tag-right d-none d-md-inline-flex">
+        <span class="ic-tag-icon" style="background: #dcfce7; color: #16a34a;">
+          <i class="bi bi-shield-check"></i>
+        </span>
+        <div class="text-start">
+          <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Investor Network</div>
+          <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">Verified Matchmaking</div>
+        </div>
+      </div>
+
       <img src="images/investment-clinic-hero-bg.png" 
            alt="Investment Clinic Platform Mockup" 
            class="ic-hero-devices-img img-fluid">

@@ -24,25 +24,145 @@
 
 
 
-<div class="container-fluid investment-clinic-page-banner d-flex flex-column justify-content-between pt-4" style="min-height: calc(100vh - 69px); overflow: hidden;">
+<style>
+    .investment-clinic-page-banner {
+        position: relative;
+        background: linear-gradient(180deg, #3b8fe8 0%, #257ad6 50%, #155ea7 100%);
+        min-height: calc(100vh - 69px);
+        overflow: hidden;
+    }
+    .ic-hero-glow-1 {
+        position: absolute;
+        top: -10%;
+        left: 15%;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(147, 197, 253, 0.45) 0%, rgba(59, 130, 246, 0) 70%);
+        pointer-events: none;
+        filter: blur(40px);
+        animation: heroGlowPulse 8s ease-in-out infinite alternate;
+        z-index: 1;
+    }
+    .ic-hero-glow-2 {
+        position: absolute;
+        top: 25%;
+        right: 10%;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(37, 99, 235, 0) 70%);
+        pointer-events: none;
+        filter: blur(50px);
+        animation: heroGlowPulse 10s ease-in-out infinite alternate-reverse;
+        z-index: 1;
+    }
+    .ic-floating-particle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(3px);
+        pointer-events: none;
+        z-index: 2;
+    }
+    .ic-p-1 { width: 14px; height: 14px; top: 18%; left: 8%; animation: floatParticle 6s ease-in-out infinite; }
+    .ic-p-2 { width: 22px; height: 22px; top: 32%; left: 88%; animation: floatParticle 8s ease-in-out infinite 1s; }
+    .ic-p-3 { width: 10px; height: 10px; top: 48%; left: 14%; animation: floatParticle 7s ease-in-out infinite 2s; }
+    .ic-hero-floating-tag {
+        position: absolute;
+        z-index: 5;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(12px);
+        color: #0f172a;
+        padding: 10px 18px;
+        border-radius: 50px;
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.95);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.86rem;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ic-tag-left { bottom: 22%; left: 6%; animation: floatSmooth 5.5s ease-in-out infinite; }
+    .ic-tag-right { bottom: 28%; right: 6%; animation: floatSmooth 6.5s ease-in-out infinite 1.2s; }
+    .ic-hero-devices-img {
+        max-width: 96%;
+        width: 1280px;
+        margin: 0 auto;
+        vertical-align: bottom;
+        filter: drop-shadow(0 -10px 40px rgba(0, 30, 80, 0.22));
+        animation: heroDeviceFloat 6s ease-in-out infinite alternate;
+        transform-origin: bottom center;
+    }
+    @keyframes heroDeviceFloat {
+        0% { transform: translateY(0px) scale(1); }
+        100% { transform: translateY(-9px) scale(1.01); }
+    }
+    @keyframes heroGlowPulse {
+        0% { transform: scale(0.9) translate(0, 0); opacity: 0.55; }
+        100% { transform: scale(1.2) translate(25px, 20px); opacity: 0.85; }
+    }
+    @keyframes floatParticle {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+        50% { transform: translateY(-20px) scale(1.15); opacity: 0.7; }
+    }
+    @keyframes floatSmooth {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+</style>
 
-    <p class="text-center page-indicator">
-        <button>Investment Clinic</button>
-    </p>
+<div class="container-fluid investment-clinic-page-banner d-flex flex-column justify-content-between pt-4">
+    <!-- Ambient glowing light orbs -->
+    <div class="ic-hero-glow-1"></div>
+    <div class="ic-hero-glow-2"></div>
+    <!-- Floating particles -->
+    <div class="ic-floating-particle ic-p-1"></div>
+    <div class="ic-floating-particle ic-p-2"></div>
+    <div class="ic-floating-particle ic-p-3"></div>
 
-
-    <div class="container">
-        <p class="page-title text-center">
-            <?= web_config()['investment_clinic_title'] ?>
-            <br>
+    <div class="position-relative pt-2" style="z-index: 4;">
+        <p class="text-center page-indicator mb-3">
+            <button class="border-0">Investment Clinic</button>
         </p>
+
+        <div class="container">
+            <p class="page-title text-center" style="text-shadow: 0 2px 14px rgba(0, 40, 100, 0.18);">
+                <?= web_config()['investment_clinic_title'] ?>
+                <br>
+            </p>
+        </div>
     </div>
 
-    <div class="text-center mt-auto w-100" style="line-height: 0;">
+    <div class="text-center mt-auto w-100 position-relative" style="line-height: 0; z-index: 3;">
+        <!-- Floating Tag Left: Capital Readiness -->
+        <div class="ic-hero-floating-tag ic-tag-left d-none d-md-inline-flex">
+            <span style="width: 32px; height: 32px; border-radius: 50%; background: #e0f2fe; color: #0284c7; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">
+                <i class="bi bi-graph-up-arrow"></i>
+            </span>
+            <div class="text-start">
+                <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Listing Readiness</div>
+                <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">98.4% Prepared</div>
+            </div>
+        </div>
+
+        <!-- Floating Tag Right: Active Pipeline -->
+        <div class="ic-hero-floating-tag ic-tag-right d-none d-md-inline-flex">
+            <span style="width: 32px; height: 32px; border-radius: 50%; background: #dcfce7; color: #16a34a; display: inline-flex; align-items: center; justify-content: center; font-size: 1rem;">
+                <i class="bi bi-shield-check"></i>
+            </span>
+            <div class="text-start">
+                <div style="font-size: 0.72rem; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Investor Network</div>
+                <div style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">Verified Matchmaking</div>
+            </div>
+        </div>
+
         <?php 
         $clinic_banner = !empty(web_config()['investment_clinic_banner']) ? base_url(web_config()['investment_clinic_banner']) : base_url('images/investment-clinic-hero-bg.png');
         ?>
-        <img src="<?= $clinic_banner ?>" alt="Investment Clinic" class="img-fluid" style="max-width: 96%; width: 1280px; margin: 0 auto; vertical-align: bottom; filter: drop-shadow(0 -5px 30px rgba(0, 0, 0, 0.15));">
+        <img src="<?= $clinic_banner ?>" alt="Investment Clinic" class="img-fluid ic-hero-devices-img">
     </div>
 
 </div>
