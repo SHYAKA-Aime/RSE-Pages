@@ -10,8 +10,7 @@
                 <a href="<?= base_url() ?>" class="rse-nav-link text-success fw-bold text-decoration-none px-2 py-1">Home</a>
                 <a href="#listed-profiles" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Listed Profiles</a>
                 <a href="#next-gen-q" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Next Gen Q</a>
-                <a href="#login" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Login</a>
-                <a href="#start-application" class="rse-nav-link text-secondary text-decoration-none px-2 py-1">Start Application</a>
+                <a href="#login" class="rse-nav-link fw-bold text-decoration-none px-2 py-1" style="color: #0284c7 !important;">Login</a>
             </div>
             <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-search text-secondary" style="font-size: 1.05rem; cursor: pointer;"></i>
