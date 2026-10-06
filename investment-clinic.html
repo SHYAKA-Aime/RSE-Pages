@@ -845,11 +845,15 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- STATS BANNER -->
-      <div class="row mt-4">
+  <!-- STATS BANNER SECTION (VISIBLE UPON SCROLL) -->
+  <section class="container-fluid py-5" style="background-color: var(--lux-surface-muted);">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-          <div class="ic-stats-banner">
+          <div class="ic-stats-banner shadow-sm">
             <div class="row text-center g-3">
               <div class="col-6 col-md-3 ic-stat-divider">
                 <div class="ic-stat-val stats-nbr"><?php if (function_exists('web_config')): ?><?= web_config()['investment_clinic_stats_total_smes'] ?><?php else: ?>30+<?php endif; ?></div>
@@ -875,7 +879,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- PROFILES LISTING -->
   <section class="py-5" style="background-color: var(--lux-surface-muted);">
