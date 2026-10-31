@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESG GPS &amp; A-Cubed Rating Process | Rwanda Stock Exchange</title>
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Outfit (Modern Institutional Display) & Work Sans (Clean Humanist Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gew-primary-dark: #0a3518;
+      --gew-emerald-mid: #15622e;
+      --gew-brand-green: #00a84f;
+      --gew-chartreuse: #a6ce39;
+      --rse-ink: #111827;
+      --rse-body: #374151;
+      --rse-muted: #6b7280;
+      --rse-sage-light: #f3f7f4;
+      --rse-sage-mid: #e3efe6;
+      --rse-border: #d8e2dc;
+      --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+      --font-sans: 'Work Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    html, body {
+      font-family: var(--font-sans);
+      color: var(--rse-body);
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, .font-display {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+
+    h3, h4, h5, .font-heading {
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+    }
+
+    /* Navigation - Identical to Green Exchange Window */
+    .rse-navbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--rse-border);
+      padding: 14px 0;
+    }
+    .rse-navbar-logo {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .rse-nav-link {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--rse-ink);
+      text-decoration: none;
+      padding: 8px 16px;
+      transition: color 0.15s ease;
+    }
+    .rse-nav-link:hover {
+      color: var(--gew-brand-green);
+    }
+
+    .rse-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gew-brand-green);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .rse-eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--gew-brand-green);
+    }
+
+    /* HERO SECTION */
+    .esg-hero-section {
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(6, 33, 14, 0.92) 0%, rgba(10, 53, 24, 0.78) 38%, rgba(10, 53, 24, 0.36) 54%, rgba(6, 33, 14, 0.88) 74%, rgba(6, 33, 14, 0.94) 100%),
+        url('images/original-hero-image-bg.png') center bottom / cover no-repeat;
+      color: #ffffff;
+      padding: 64px 0 72px;
+      overflow: hidden;
+    }
+
+    .gew-hero-graphic-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      margin-bottom: 14px;
+    }
+    .gew-hero-sphere {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+    .gew-hero-bubble {
+      position: absolute;
+    }
+    .gew-bubble-sm-1 {
+      top: -2px;
+      right: -4px;
+      width: 11px;
+      height: 11px;
+      animation: floatReverse 4.5s ease-in-out infinite;
+    }
+    .gew-bubble-sm-2 {
+      bottom: 0;
+      left: -5px;
+      width: 8px;
+      height: 8px;
+      animation: floatSlow 5.5s ease-in-out 1s infinite;
+    }
+    .gew-bubble-sm-3 {
+      top: 8px;
+      left: -4px;
+      width: 6px;
+      height: 6px;
+      animation: floatReverse 6s ease-in-out 0.5s infinite;
+    }
+
+    .esg-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.3rem, 3.6vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .esg-hero-right-editorial {
+      padding-left: 24px;
+      border-left: 2px solid rgba(166, 206, 57, 0.65);
+      max-width: 450px;
+      margin-left: auto;
+    }
+    @media (max-width: 991.98px) {
+      .esg-hero-right-editorial {
+        padding-left: 0;
+        border-left: none;
+        margin-left: 0;
+      }
+    }
+
+    .esg-hero-lead {
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.94);
+      margin: 0 0 18px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Clean "Powered By" + Logo Badge in Hero */
+    .ri-powered-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 8px 16px 8px 18px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    }
+    .ri-powered-kicker {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gew-primary-dark);
+      border-right: 1px solid #e5e7eb;
+      padding-right: 14px;
+      line-height: 1;
+    }
+    .ri-powered-logo-wrap {
+      width: 110px;
+      height: 52px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ri-powered-logo-wrap img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      transform: scale(1.48);
+    }
+
+    /* SECTION 1: ESG GPS RATING PROCESS (Clean 4-Step Linear Pipeline) */
+    .esg-gps-process-section {
+      padding: 84px 0 92px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--rse-border);
+    }
+
+    .esg-section-header {
+      margin-bottom: 48px;
+    }
+
+    /* Step Connector Track on Desktop */
+    .gps-pipeline-wrap {
+      position: relative;
+    }
+    @media (min-width: 1200px) {
+      .gps-pipeline-wrap::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 26px;
+        right: 24%;
+        height: 2px;
+        background: var(--rse-border);
+        z-index: 0;
+      }
+    }
+
+    .gps-step-col {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gps-step-num-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .gps-step-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gew-primary-dark);
+      color: var(--gew-chartreuse);
+      border: 4px solid #ffffff;
+      box-shadow: 0 0 0 1px var(--rse-border);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .gps-step-card {
+      background: var(--rse-sage-light);
+      border: 1px solid var(--rse-border);
+      border-top: 3px solid var(--gew-primary-dark);
+      border-radius: 12px;
+      padding: 28px 24px;
+      height: calc(100% - 72px);
+    }
+
+    .gps-step-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gew-primary-dark);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rse-border);
+    }
+
+    .gps-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .gps-checklist li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.93rem;
+      line-height: 1.55;
+      color: var(--rse-body);
+    }
+
+    .gps-checklist li::before {
+      content: "\F26E";
+      font-family: "bootstrap-icons";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 1rem;
+      color: var(--gew-brand-green);
+    }
+
+    /* SECTION 2: A-CUBED RATING PROCESS (Icon & Arrow Loop Diagram) */
+    .acubed-process-section {
+      padding: 84px 0 96px;
+      background: var(--rse-sage-light);
+      border-bottom: 1px solid var(--rse-border);
+    }
+
+    .acubed-diagram-board {
+      background: #ffffff;
+      border: 1px solid var(--rse-border);
+      border-radius: 24px;
+      padding: 48px 36px;
+      box-shadow: 0 16px 40px rgba(10, 53, 24, 0.05);
+    }
+
+    .acubed-diagram-canvas {
+      position: relative;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 992px) {
+      .acubed-diagram-canvas {
+        height: 740px;
+      }
+      .acubed-node {
+        position: absolute;
+      }
+      .acubed-node-clients {
+        top: 10px;
+        left: 20%;
+        width: 200px;
+      }
+      .acubed-node-input {
+        top: 10px;
+        left: 47.5%;
+        width: 220px;
+      }
+      .acubed-node-nlp {
+        top: 10px;
+        left: 75.5%;
+        width: 240px;
+      }
+      .acubed-node-algo {
+        top: 425px;
+        left: 74.5%;
+        width: 250px;
+      }
+      .acubed-node-rating {
+        top: 465px;
+        left: 47.5%;
+        width: 210px;
+      }
+      .acubed-node-report {
+        top: 415px;
+        left: 19.5%;
+        width: 235px;
+      }
+      .acubed-node-download {
+        top: 235px;
+        left: 0.5%;
+        width: 185px;
+      }
+
+      /* 7 Directional Chevron Arrows */
+      .acubed-arrow {
+        position: absolute;
+        width: 68px;
+        height: 54px;
+        z-index: 2;
+        filter: drop-shadow(0 6px 12px rgba(0, 140, 180, 0.18));
+      }
+      /* 1. Clients -> Input Data (Right) */
+      .acubed-arrow-1 {
+        top: 66px;
+        left: 39%;
+        transform: rotate(0deg);
+      }
+      /* 2. Input Data -> NLP Processing (Right) */
+      .acubed-arrow-2 {
+        top: 66px;
+        left: 67.5%;
+        transform: rotate(0deg);
+      }
+      /* 3. NLP Processing -> Algorithm Engine (Down) */
+      .acubed-arrow-3 {
+        top: 332px;
+        left: 84%;
+        transform: rotate(90deg);
+      }
+      /* 4. Algorithm Engine -> Final Rating (Left) */
+      .acubed-arrow-4 {
+        top: 505px;
+        left: 66.5%;
+        transform: rotate(180deg);
+      }
+      /* 5. Final Rating -> Report (Left) */
+      .acubed-arrow-5 {
+        top: 505px;
+        left: 39.5%;
+        transform: rotate(180deg);
+      }
+      /* 6. Report -> Download (Up-Left) */
+      .acubed-arrow-6 {
+        top: 460px;
+        left: 9.5%;
+        transform: rotate(-128deg);
+      }
+      /* 7. Download -> Clients (Up-Right) */
+      .acubed-arrow-7 {
+        top: 130px;
+        left: 11%;
+        transform: rotate(-38deg);
+      }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .acubed-node-clients,
+      .acubed-node-input,
+      .acubed-node-nlp,
+      .acubed-node-algo,
+      .acubed-node-rating,
+      .acubed-node-report {
+        width: 195px;
+      }
+      .acubed-node-download {
+        width: 165px;
+      }
+      .acubed-arrow {
+        width: 54px;
+        height: 44px;
+      }
+    }
+
+    .acubed-icon-wrap {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .acubed-icon-wrap img {
+      max-height: 92px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .acubed-icon-clean-algo {
+      clip-path: inset(12% 4% 2% 4%);
+    }
+    .acubed-icon-clean-download {
+      clip-path: inset(8% 4% 2% 4%);
+    }
+
+    .acubed-stage-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--rse-ink);
+      text-align: center;
+      margin: 0 0 10px;
+    }
+
+    .acubed-list {
+      padding-left: 18px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .acubed-list li {
+      font-size: 0.84rem;
+      line-height: 1.48;
+      color: var(--rse-ink);
+      font-weight: 500;
+    }
+
+    /* SECTION 3: DISPLAYED SAMPLE REPORTS (Live Embedded PDF Viewers) */
+    .esg-docs-section {
+      padding: 84px 0 96px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--rse-border);
+    }
+
+    .esg-doc-viewer-card {
+      background: var(--rse-sage-light);
+      border: 1px solid var(--rse-border);
+      border-top: 3px solid var(--gew-primary-dark);
+      border-radius: 14px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 28px rgba(10, 53, 24, 0.05);
+    }
+
+    .esg-doc-header {
+      padding: 18px 22px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--rse-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .esg-doc-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gew-primary-dark);
+      margin: 0;
+    }
+
+    .esg-doc-sub {
+      font-size: 0.78rem;
+      color: var(--rse-muted);
+      margin-top: 2px;
+    }
+
+    .esg-doc-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .esg-doc-btn {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--rse-border);
+      background: #ffffff;
+      color: var(--rse-ink);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .esg-doc-btn:hover {
+      border-color: var(--gew-brand-green);
+      color: var(--gew-brand-green);
+    }
+    .esg-doc-btn-primary {
+      background: var(--gew-primary-dark);
+      border-color: var(--gew-primary-dark);
+      color: #ffffff;
+    }
+    .esg-doc-btn-primary:hover {
+      background: var(--gew-emerald-mid);
+      border-color: var(--gew-emerald-mid);
+      color: #ffffff;
+    }
+
+    .esg-doc-frame-wrap {
+      position: relative;
+      width: 100%;
+      height: 620px;
+      background: #e5e7eb;
+    }
+
+    .esg-doc-iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Partners & Footer */
+    .gew-partners-editorial {
+      padding: 64px 0;
+      background: #ffffff;
+    }
+    .gew-partner-box {
+      background: #ffffff;
+      border: 1px solid var(--rse-border);
+      border-radius: 10px;
+      padding: 20px 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 92px;
+      min-width: 210px;
+    }
+    .gew-partner-logo {
+      max-height: 54px;
+      max-width: 160px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .rse-footer {
+      background: #07190e;
+      color: #9ca3af;
+      padding: 64px 0 32px;
+      font-size: 0.9rem;
+    }
+    .rse-footer a {
+      color: #d1d5db;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .rse-footer a:hover {
+      color: var(--gew-chartreuse);
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 991.98px) {
+      .esg-hero-section {
+        padding: 44px 0 56px;
+      }
+      .esg-hero-right-editorial {
+        padding-left: 18px;
+        border-left: 2px solid rgba(166, 206, 57, 0.65);
+        margin-left: 0;
+        max-width: 100%;
+      }
+      .esg-gps-process-section,
+      .acubed-process-section,
+      .esg-docs-section {
+        padding: 56px 0;
+      }
+      .acubed-diagram-board {
+        padding: 28px 20px;
+      }
+      .acubed-diagram-canvas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .acubed-node {
+        width: 100%;
+        max-width: 480px;
+        background: var(--rse-sage-light);
+        border: 1px solid var(--rse-border);
+        border-radius: 14px;
+        padding: 22px 20px;
+      }
+      .acubed-arrow {
+        width: 46px;
+        height: 38px;
+        flex-shrink: 0;
+        display: block;
+        transform: rotate(90deg);
+        margin: 2px auto;
+        filter: drop-shadow(0 4px 8px rgba(0, 140, 180, 0.16));
+      }
+      .acubed-arrow-7 {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .rse-navbar-logo {
+        height: 38px;
+      }
+      .esg-hero-title {
+        font-size: 2rem;
+      }
+      .esg-doc-frame-wrap {
+        height: 440px;
+      }
+      .gew-partner-box {
+        min-width: 140px;
+        flex: 1 1 140px;
+        padding: 16px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="main-nav rse-navbar sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <?php if (function_exists('view')): ?>
+        <?php echo view('_parts/_nav'); ?>
+      <?php else: ?>
+        <a class="navbar-brand py-0 d-flex align-items-center" href="green-windows-exchange.html">
+          <img src="images/RSE logo.png" alt="Rwanda Stock Exchange" class="rse-navbar-logo">
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="green-windows-exchange.html" class="rse-nav-link fw-semibold" style="color: #475569;">Home</a>
+          <a href="green-windows-exchange.html#real-time-data" class="rse-nav-link fw-semibold" style="color: #475569;">GEW Sustainable Products</a>
+          <a href="green-windows-exchange.html#downloads" class="rse-nav-link fw-semibold" style="color: #475569;">GEW Publications</a>
+          <a href="green-windows-exchange.html#gew-datahub" class="rse-nav-link fw-semibold" style="color: #475569;">GEW DataHub</a>
+          <a href="esg-gps.html" class="rse-nav-link text-success fw-semibold">ESG GPS</a>
+        </div>
+
+        <!-- Desktop Action Buttons -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <a href="#contact" class="btn btn-sm btn-success rounded-pill px-4 py-2 fw-semibold shadow-sm" style="background-color: #009a44; border-color: #009a44;">Start investing</a>
+        </div>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="btn btn-link text-dark p-1 d-lg-none border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileGewMenu" aria-controls="mobileGewMenu" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+
+        <!-- Offcanvas Mobile Drawer -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileGewMenu" aria-labelledby="mobileGewMenuLabel">
+          <div class="offcanvas-header border-bottom">
+            <a href="green-windows-exchange.html" class="d-flex align-items-center">
+              <img src="images/RSE logo.png" alt="Rwanda Stock Exchange" style="height: 40px; width: auto; object-fit: contain;">
+            </a>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex flex-column justify-content-between p-4">
+            <div class="d-flex flex-column gap-3">
+              <a href="green-windows-exchange.html" class="text-decoration-none fw-semibold text-dark fs-5 py-2 border-bottom">Home</a>
+              <a href="green-windows-exchange.html#real-time-data" class="text-decoration-none fw-semibold text-dark fs-5 py-2 border-bottom">GEW Sustainable Products</a>
+              <a href="green-windows-exchange.html#downloads" class="text-decoration-none fw-semibold text-dark fs-5 py-2 border-bottom">GEW Publications</a>
+              <a href="green-windows-exchange.html#gew-datahub" class="text-decoration-none fw-semibold text-dark fs-5 py-2 border-bottom">GEW DataHub</a>
+              <a href="esg-gps.html" class="text-decoration-none fw-bold text-success fs-5 py-2 border-bottom">ESG GPS</a>
+            </div>
+            <div class="d-flex flex-column gap-3 mt-4 pt-3 border-top">
+              <a href="#contact" class="btn btn-success rounded-pill py-2 fw-semibold text-center shadow-sm" style="background-color: #009a44; border-color: #009a44;" data-bs-dismiss="offcanvas">
+                Start investing
+              </a>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH "POWERED BY RISK INSIGHTS" -->
+  <section class="esg-hero-section">
+    <div class="container position-relative">
+      <div class="row align-items-end g-4 g-lg-5">
+        <div class="col-lg-7">
+          <div class="gew-hero-graphic-wrap">
+            <img src="images/logo over bg image.png" alt="Rwanda Stock Exchange Green Exchange Window" class="gew-hero-sphere">
+            <img src="images/bubble over bg image.png" alt="" class="gew-hero-bubble gew-bubble-sm-1">
+            <img src="images/bubble over bg image.png" alt="" class="gew-hero-bubble gew-bubble-sm-2">
+            <img src="images/bubble over bg image.png" alt="" class="gew-hero-bubble gew-bubble-sm-3">
+          </div>
+
+          <h1 class="esg-hero-title">
+            ESG GPS &amp; A-Cubed<br>Rating Process
+          </h1>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="esg-hero-right-editorial">
+            <p class="esg-hero-lead">
+              AI-powered ESG disclosure intelligence, natural language processing, and sustainability rating models for the Rwanda Stock Exchange Green Exchange Window.
+            </p>
+            <div class="ri-powered-badge">
+              <span class="ri-powered-kicker">Powered By</span>
+              <div class="ri-powered-logo-wrap">
+                <img src="images/partner 1.jpg" alt="Risk Insights">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: ESG GPS RATING PROCESS -->
+  <section class="esg-gps-process-section" id="esg-gps-rating">
+    <div class="container">
+      <div class="esg-section-header">
+        <span class="rse-eyebrow">ESG DISCLOSURE INTELLIGENCE</span>
+        <h2 class="display-6 text-dark mb-2">ESG GPS Rating Process</h2>
+        <p class="text-secondary mb-0" style="max-width: 680px; font-size: 1.02rem;">
+          A four-stage rating process that gathers unstructured and structured corporate disclosures, applies natural language and machine learning models, and produces calibrated E, S, and G scores.
+        </p>
+      </div>
+
+      <!-- Clean 4-Step Pipeline -->
+      <div class="gps-pipeline-wrap">
+        <div class="row g-4 align-items-stretch">
+          <!-- STEP 1: DATA SOURCES -->
+          <div class="col-md-6 col-xl-3 gps-step-col">
+            <div class="gps-step-num-bar">
+              <span class="gps-step-circle">1</span>
+            </div>
+            <div class="gps-step-card">
+              <h3 class="gps-step-title">Data sources</h3>
+              <img src="images/data sources image.png" alt="ESG Data Sources Frameworks" class="img-fluid rounded-2 mb-3 border" style="background: #ffffff; padding: 6px; width: 100%; object-fit: contain;">
+              <ul class="gps-checklist">
+                <li>Laws of the land</li>
+                <li>Integrated reports</li>
+                <li>Sustainability reports</li>
+                <li>Disclosed company policies</li>
+                <li>News feeds</li>
+                <li>X-Ray Data source</li>
+                <li>Mandatory &amp; voluntary disclosed unstructured data</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- STEP 2: AI - ALGORITHMS -->
+          <div class="col-md-6 col-xl-3 gps-step-col">
+            <div class="gps-step-num-bar">
+              <span class="gps-step-circle">2</span>
+            </div>
+            <div class="gps-step-card">
+              <h3 class="gps-step-title">AI - algorithms</h3>
+              <ul class="gps-checklist">
+                <li>Natural language processing</li>
+                <li>Information retrieval algorithm</li>
+                <li>Machine learning algorithm</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- STEP 3: AI - PROCESSING -->
+          <div class="col-md-6 col-xl-3 gps-step-col">
+            <div class="gps-step-num-bar">
+              <span class="gps-step-circle">3</span>
+            </div>
+            <div class="gps-step-card">
+              <h3 class="gps-step-title">AI - processing</h3>
+              <ul class="gps-checklist">
+                <li>Calculates frequency &amp; relevance of words using TF - IDF</li>
+                <li>Newsfeeds</li>
+                <li>Using computer engineering algorithms to accurately identify and extract ESG disclosure information (X-Ray data)</li>
+                <li>Links X-Ray element with related B-word &ndash; materiality mapping</li>
+                <li>TF-IDF score, and internal algorithm calibrated with the share price, market cap &amp; PE Ratio</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- STEP 4: ESG RATING -->
+          <div class="col-md-6 col-xl-3 gps-step-col">
+            <div class="gps-step-num-bar">
+              <span class="gps-step-circle">4</span>
+            </div>
+            <div class="gps-step-card">
+              <h3 class="gps-step-title">ESG rating</h3>
+              <ul class="gps-checklist">
+                <li>Score between 1 &amp; 4</li>
+                <li>4 is the highest ESG score</li>
+                <li>Sub-factors E, S, G scores</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: A-CUBED RATING PROCESS -->
+  <section class="acubed-process-section" id="a-cubed-rating">
+    <div class="container">
+      <div class="esg-section-header text-center">
+        <span class="rse-eyebrow justify-content-center">CONTINUOUS RATING CYCLE</span>
+        <h2 class="display-6 text-dark mb-2">A-CUBED RATING PROCESS</h2>
+        <p class="text-secondary mx-auto mb-0" style="max-width: 680px; font-size: 1.02rem;">
+          A closed-loop verification process connecting clients, evidence submission, NLP validation, algorithmic scoring, and comprehensive ESG reporting.
+        </p>
+      </div>
+
+      <!-- Reusable 3D Notched Chevron Arrow SVG Definition -->
+      <svg width="0" height="0" style="position: absolute;">
+        <defs>
+          <linearGradient id="acubedArrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0088b8" />
+            <stop offset="55%" stop-color="#00b4e5" />
+            <stop offset="100%" stop-color="#00d2ff" />
+          </linearGradient>
+          <symbol id="acubed-chevron-arrow" viewBox="0 0 84 66">
+            <!-- 3D Depth Shadow Layer -->
+            <polygon points="4,16 44,16 44,4 76,35 44,65 44,53 4,53 18,35" fill="#065a78" />
+            <!-- Main Bright Gradient Chevron Face -->
+            <polygon points="10,13 50,13 50,1 82,32 50,62 50,50 10,50 24,32" fill="url(#acubedArrowGrad)" />
+          </symbol>
+        </defs>
+      </svg>
+
+      <div class="acubed-diagram-board">
+        <div class="acubed-diagram-canvas">
+
+          <!-- 1. CLIENTS (Top Left-Center) -->
+          <div class="acubed-node acubed-node-clients">
+            <div class="acubed-icon-wrap">
+              <img src="images/clients icon.png" alt="Clients">
+            </div>
+            <h3 class="acubed-stage-title">CLIENTS</h3>
+            <ul class="acubed-list">
+              <li>Companies</li>
+              <li>Stakeholders</li>
+              <li>Investors</li>
+            </ul>
+          </div>
+
+          <!-- Arrow 1: Clients -> Input Data -->
+          <svg class="acubed-arrow acubed-arrow-1" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+          <!-- 2. INPUT DATA (Top Center) -->
+          <div class="acubed-node acubed-node-input">
+            <div class="acubed-icon-wrap">
+              <img src="images/input data icon.png" alt="Input Data">
+            </div>
+            <h3 class="acubed-stage-title">INPUT DATA</h3>
+            <ul class="acubed-list">
+              <li>Questionnaire filled by client.</li>
+              <li>Supporting pdf documents uploaded for evidence.</li>
+            </ul>
+          </div>
+
+          <!-- Arrow 2: Input Data -> NLP Processing -->
+          <svg class="acubed-arrow acubed-arrow-2" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+          <!-- 3. NLP PROCESSING (Top Right) -->
+          <div class="acubed-node acubed-node-nlp">
+            <div class="acubed-icon-wrap">
+              <img src="images/NLP proc icon.png" alt="NLP Processing">
+            </div>
+            <h3 class="acubed-stage-title">NLP PROCESSING</h3>
+            <ul class="acubed-list">
+              <li>Pdf documents are checked using NLP machine learning.</li>
+              <li>This process determines whether significant evidence was provided for each answered question.</li>
+              <li>Data validation.</li>
+            </ul>
+          </div>
+
+          <!-- Arrow 3: NLP Processing -> Algorithm (Engine) -->
+          <svg class="acubed-arrow acubed-arrow-3" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+          <!-- 4. ALGORITHM (ENGINE) (Bottom Right) -->
+          <div class="acubed-node acubed-node-algo">
+            <div class="acubed-icon-wrap">
+              <img src="images/Algorithm Eng icon.png" alt="Algorithm Engine" class="acubed-icon-clean-algo">
+            </div>
+            <h3 class="acubed-stage-title">ALGORITHM (ENGINE)</h3>
+            <ul class="acubed-list">
+              <li>The specifically designed algorithm will run and assign a score based on the question answered as well as evidence provided.</li>
+            </ul>
+          </div>
+
+          <!-- Arrow 4: Algorithm (Engine) -> Final Rating -->
+          <svg class="acubed-arrow acubed-arrow-4" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+          <!-- 5. FINAL RATING (Bottom Center) -->
+          <div class="acubed-node acubed-node-rating">
+            <div class="acubed-icon-wrap">
+              <img src="images/final rating icon.png" alt="Final Rating">
+            </div>
+            <h3 class="acubed-stage-title">FINAL RATING</h3>
+          </div>
+
+          <!-- Arrow 5: Final Rating -> Report -->
+          <svg class="acubed-arrow acubed-arrow-5" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+          <!-- 6. REPORT (Bottom Left-Center) -->
+          <div class="acubed-node acubed-node-report">
+            <div class="acubed-icon-wrap">
+              <img src="images/report icon.png" alt="Report">
+            </div>
+            <h3 class="acubed-stage-title">REPORT</h3>
+            <ul class="acubed-list">
+              <li>Comprehensive report on ESG</li>
+              <li>Clear metrics to measure areas of improvement</li>
+              <li>Clear company ESG goals and progress</li>
+              <li>Based on recognized ESG reporting standards</li>
+            </ul>
+          </div>
+
+          <!-- Arrow 6: Report -> Download -->
+          <svg class="acubed-arrow acubed-arrow-6" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+          <!-- 7. DOWNLOAD (Middle Far-Left) -->
+          <div class="acubed-node acubed-node-download">
+            <div class="acubed-icon-wrap">
+              <img src="images/download icon.png" alt="Download" class="acubed-icon-clean-download">
+            </div>
+            <h3 class="acubed-stage-title">DOWNLOAD</h3>
+            <ul class="acubed-list">
+              <li>You can get the A Cubed app from the Microsoft Store</li>
+            </ul>
+          </div>
+
+          <!-- Arrow 7: Download -> Clients -->
+          <svg class="acubed-arrow acubed-arrow-7" aria-hidden="true">
+            <use href="#acubed-chevron-arrow"></use>
+          </svg>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DISPLAYED SAMPLE ESG & A-CUBED REPORTS (Live Document Viewers) -->
+  <section class="esg-docs-section" id="sample-reports">
+    <div class="container">
+      <div class="esg-section-header">
+        <span class="rse-eyebrow">SAMPLE RATING &amp; DISCLOSURE REPORTS</span>
+        <h2 class="display-6 text-dark mb-2">Sample ESG GPS &amp; A-Cubed Reports</h2>
+        <p class="text-secondary mb-0" style="max-width: 720px; font-size: 1.02rem;">
+          Browse the actual redacted sample rating reports below to see how ESG GPS X-Ray disclosures, Comprehensive ESG evaluations, and A-Cubed ratings are structured.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- DOCUMENT 1: SAMPLE ACUBED RATING REPORT -->
+        <div class="col-lg-4">
+          <div class="esg-doc-viewer-card">
+            <div class="esg-doc-header">
+              <div>
+                <h3 class="esg-doc-title">Sample A-Cubed Rating Report</h3>
+                <div class="esg-doc-sub">A-Cubed Rating Methodology &middot; PDF Document</div>
+              </div>
+              <div class="esg-doc-actions">
+                <button type="button" class="esg-doc-btn" data-bs-toggle="modal" data-bs-target="#pdfPreviewModal" data-pdf-url="Docs/Sample%20ACubed%20Rating%20Report_Redacted.pdf" data-pdf-title="Sample A-Cubed Rating Report">
+                  <i class="bi bi-arrows-fullscreen"></i> Expand
+                </button>
+                <a href="Docs/Sample%20ACubed%20Rating%20Report_Redacted.pdf" target="_blank" rel="noopener" class="esg-doc-btn esg-doc-btn-primary" title="Open or Download PDF">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="esg-doc-frame-wrap">
+              <iframe src="Docs/Sample%20ACubed%20Rating%20Report_Redacted.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Sample A-Cubed Rating Report" class="esg-doc-iframe"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOCUMENT 2: SAMPLE COMPREHENSIVE REPORT 2024 -->
+        <div class="col-lg-4">
+          <div class="esg-doc-viewer-card">
+            <div class="esg-doc-header">
+              <div>
+                <h3 class="esg-doc-title">Sample Comprehensive Report 2024</h3>
+                <div class="esg-doc-sub">Comprehensive ESG Assessment &middot; PDF Document</div>
+              </div>
+              <div class="esg-doc-actions">
+                <button type="button" class="esg-doc-btn" data-bs-toggle="modal" data-bs-target="#pdfPreviewModal" data-pdf-url="Docs/Sample%20Comprehensive%20Report%202024_Redacted.pdf" data-pdf-title="Sample Comprehensive Report 2024">
+                  <i class="bi bi-arrows-fullscreen"></i> Expand
+                </button>
+                <a href="Docs/Sample%20Comprehensive%20Report%202024_Redacted.pdf" target="_blank" rel="noopener" class="esg-doc-btn esg-doc-btn-primary" title="Open or Download PDF">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="esg-doc-frame-wrap">
+              <iframe src="Docs/Sample%20Comprehensive%20Report%202024_Redacted.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Sample Comprehensive Report 2024" class="esg-doc-iframe"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOCUMENT 3: SAMPLE X-RAY REPORTS -->
+        <div class="col-lg-4">
+          <div class="esg-doc-viewer-card">
+            <div class="esg-doc-header">
+              <div>
+                <h3 class="esg-doc-title">Sample X-Ray Reports</h3>
+                <div class="esg-doc-sub">ESG GPS Disclosure X-Ray &middot; PDF Document</div>
+              </div>
+              <div class="esg-doc-actions">
+                <button type="button" class="esg-doc-btn" data-bs-toggle="modal" data-bs-target="#pdfPreviewModal" data-pdf-url="Docs/Sample%20X-ray%20Reports_Redacted.pdf" data-pdf-title="Sample X-Ray Reports">
+                  <i class="bi bi-arrows-fullscreen"></i> Expand
+                </button>
+                <a href="Docs/Sample%20X-ray%20Reports_Redacted.pdf" target="_blank" rel="noopener" class="esg-doc-btn esg-doc-btn-primary" title="Open or Download PDF">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="esg-doc-frame-wrap">
+              <iframe src="Docs/Sample%20X-ray%20Reports_Redacted.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="Sample X-Ray Reports" class="esg-doc-iframe"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULLSCREEN DOCUMENT PREVIEW MODAL -->
+  <div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-labelledby="pdfPreviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 92vw;">
+      <div class="modal-content border-0 shadow-lg" style="height: 88vh; border-radius: 14px; overflow: hidden;">
+        <div class="modal-header py-3 px-4 bg-white border-bottom">
+          <h4 class="modal-title h6 fw-bold mb-0 font-display" id="pdfPreviewModalLabel" style="color: var(--gew-primary-dark);">Document Preview</h4>
+          <div class="d-flex align-items-center gap-2 ms-auto">
+            <a href="#" id="pdfModalDownloadBtn" target="_blank" rel="noopener" class="esg-doc-btn esg-doc-btn-primary">
+              <i class="bi bi-download"></i> Open / Download PDF
+            </a>
+            <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body p-0 bg-secondary bg-opacity-10">
+          <iframe id="pdfModalIframe" src="" title="Expanded PDF Document Viewer" style="width: 100%; height: 100%; border: 0;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTNERS BAR -->
+  <section class="gew-partners-editorial">
+    <div class="container">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-lg-5">
+          <span class="rse-eyebrow">OUR PARTNERS</span>
+          <h2 class="h3 text-dark mb-0">
+            Our Green Exchange Window Partners
+          </h2>
+        </div>
+
+        <div class="col-lg-7 d-flex justify-content-lg-end justify-content-start align-items-center gap-4 flex-wrap">
+          <div class="gew-partner-box">
+            <img src="images/partner 1.jpg" alt="Risk Insights" class="gew-partner-logo">
+          </div>
+          <div class="gew-partner-box">
+            <img src="images/partner 2.png" alt="LuxDev - Luxembourg Development Agency" class="gew-partner-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rse-footer" id="contact">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <div class="fw-bold text-white fs-5 mb-2 font-display">Rwanda Stock Exchange</div>
+          <p class="small text-secondary mb-3">
+            1st Floor, KCT, KN 81<br>
+            PO BOX 5337 Kigali, Rwanda
+          </p>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold text-white small text-uppercase mb-3">Company</div>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Board of directors</a></li>
+            <li><a href="#">RSE management</a></li>
+            <li><a href="#">Public education</a></li>
+            <li><a href="#">Book an appointment</a></li>
+            <li><a href="#">Public holidays</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-bold text-white small text-uppercase mb-3">Quick links</div>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Listed companies</a></li>
+            <li><a href="#">CMA</a></li>
+            <li><a href="#">RSE Stockbrokers</a></li>
+            <li><a href="#">ASEA</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="fw-bold text-white small text-uppercase mb-3">Contact us</div>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><i class="bi bi-telephone me-2"></i> Tel: +250 788 516 021</li>
+            <li><i class="bi bi-headset me-2"></i> Toll free: 5337</li>
+            <li><i class="bi bi-envelope me-2"></i> Email: info@rse.rw</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-top border-secondary border-opacity-25 pt-4 d-flex flex-wrap justify-content-between small">
+        <div>&copy; 2026 Rwanda Stock Exchange. All rights Reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const pdfModal = document.getElementById('pdfPreviewModal');
+    if (pdfModal) {
+      pdfModal.addEventListener('show.bs.modal', function (event) {
+        const btn = event.relatedTarget;
+        const pdfUrl = btn.getAttribute('data-pdf-url');
+        const pdfTitle = btn.getAttribute('data-pdf-title');
+        document.getElementById('pdfPreviewModalLabel').textContent = pdfTitle;
+        document.getElementById('pdfModalIframe').src = pdfUrl + '#view=FitH';
+        document.getElementById('pdfModalDownloadBtn').href = pdfUrl;
+      });
+      pdfModal.addEventListener('hidden.bs.modal', function () {
+        document.getElementById('pdfModalIframe').src = '';
+      });
+    }
+  </script>
+</body>
+</html>

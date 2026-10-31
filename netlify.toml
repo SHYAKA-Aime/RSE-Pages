@@ -23,3 +23,8 @@
   from = "/investment-clinic"
   to = "/investment-clinic.html"
   status = 200
+
+[[redirects]]
+  from = "/esg-gps"
+  to = "/esg-gps.html"
+  status = 200
